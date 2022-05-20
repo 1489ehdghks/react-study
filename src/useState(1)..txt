@@ -1,0 +1,28 @@
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [click, background]= useState(1);
+
+  const handleClick= () => {
+    let newBackground;
+    if (click >=12){
+      newBackground=1;
+    }else{
+      newBackground= click +1;
+    }
+    background(newBackground);
+   
+  };
+  console.log('시간')
+  return(
+    <div>
+      <span>현재 : {click}</span>
+      <button onClick={handleClick}>Update</button>
+    </div>
+
+  );  
+}
+
+//클릭시 배경이 변경되는것
+export default App;
